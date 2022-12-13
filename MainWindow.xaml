@@ -1,0 +1,74 @@
+﻿<Window x:Class="lab12.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab12"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid Background="#bd33a4">
+
+        <Menu VerticalAlignment="Top" Background="Transparent">
+            <MenuItem Header="Файл">
+                <MenuItem Header="О программе" Click="AboutProgram_Click"/>
+                <MenuItem Header="Выход" Click="Exit_Click"/>
+            </MenuItem>
+        </Menu>
+        <TabControl Margin="0,23,0,0" Background="Transparent">
+            <TabItem Header="Координаты" Background="Transparent" Foreground="White">
+                <Grid Background="Transparent">
+                    <Button Content="Рассчитать" HorizontalAlignment="Left" Margin="353,310,0,0" VerticalAlignment="Top" Width="84" Height="24" Click="CountButton_Click"/>
+                    <GroupBox Header="Исходные данные" Margin="0,-1,402,107">
+                        <GroupBox.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Очистить" Click="Clear1_Click"/>
+                            </ContextMenu>
+                        </GroupBox.ContextMenu>
+                        <Grid>
+                            <TextBox x:Name="x1" Margin="145,47,145,163" TextChanged="x1tc" ToolTip="Координата x1"/>
+                            <TextBox x:Name="y1" Margin="145,87,145,123" TextChanged="y1tc" ToolTip="Координата y1"/>
+                            <TextBox x:Name="x2" Margin="145,127,145,83" TextChanged="x2tc" ToolTip="Координата x2"/>
+                            <TextBox x:Name="y2" Margin="145,167,145,43" TextChanged="y2tc" ToolTip="Координата y2"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Результаты" Margin="397,-1,10,107">
+                        <GroupBox.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Очистить" Click="Clear2_Click"/>
+                            </ContextMenu>
+                        </GroupBox.ContextMenu>
+                        <Grid>
+                            <TextBox x:Name="perimeter" Margin="145,87,145,123" ToolTip="Периметр прямоугольника" IsReadOnly="True"/>
+                            <TextBox x:Name="square" Margin="145,127,145,83" ToolTip="Площадь прямоугольника" IsReadOnly="True"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Вес файла" Background="Transparent" Foreground="White">
+                <Grid Background="Transparent">
+                    <Button Content="Рассчитать" HorizontalAlignment="Left" Margin="357,314,0,0" VerticalAlignment="Top" Click="Button_Click" Height="29" Width="86"/>
+                    <GroupBox Header="Исходные данные" Margin="0,0,397,111">
+                        <GroupBox.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Очистить" Click="Clear3_Click"/>
+                            </ContextMenu>
+                        </GroupBox.ContextMenu>
+                        <Grid>
+                            <TextBox x:Name="bytes" Margin="145,87,145,123" TextChanged="bytestc" ToolTip="Количество байт"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Результаты" Margin="402,0,0,111">
+                        <GroupBox.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Очистить" Click="Clear4_Click"/>
+                            </ContextMenu>
+                        </GroupBox.ContextMenu>
+                        <Grid>
+                            <TextBox x:Name="kilobytes" Margin="145,87,145,123" ToolTip="Количество килобайт" IsReadOnly="True"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
